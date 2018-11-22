@@ -11,4 +11,5 @@ public interface IfaceRemoteClass extends Remote{
     /* It will be possible to invoke this method from an application in other JVM */
     public String read(String data) throws RemoteException;
     public String write(String data) throws RemoteException;
+    public String sizeOf(String data) throws RemoteException;
 }

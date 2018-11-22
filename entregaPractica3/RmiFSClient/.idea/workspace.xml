@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c3861e1-76a6-42dc-9c05-8c1790d9abb4" name="Default Changelist" comment="" />
+    <list default="true" id="4c3861e1-76a6-42dc-9c05-8c1790d9abb4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Practica 2/Practica2/.~lock.RPC.pptx#" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entregaPractica2/rpcfs2/rpcfs_client.c" beforeDir="false" afterPath="$PROJECT_DIR$/../../entregaPractica2/rpcfs2/rpcfs_client.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RmiFSClient/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RmiFSClient/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RmiFSClient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RmiFSClient/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RmiFSClient/RmiFSClient.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RmiFSClient/out/production/Practica3/Rmifs/AskRemote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RmiFSClient/out/production/Practica3/Rmifs/IfaceRemoteClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RmiFSClient/out/production/Practica3/Rmifs/RemoteClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RmiFSClient/out/production/Practica3/Rmifs/StartRemoteObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RmiFSClient/src/Rmifs/AskRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RmiFSClient/src/Rmifs/AskRemote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RmiFSClient/src/Rmifs/IfaceRemoteClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RmiFSClient/src/Rmifs/IfaceRemoteClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RmiFSClient/src/Rmifs/RemoteClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RmiFSClient/src/Rmifs/RemoteClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RmiFSClient/src/Rmifs/StartRemoteObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/../RmiFSClient/src/Rmifs/StartRemoteObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica3/Rmifs/AskRemote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica3/Rmifs/IfaceRemoteClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica3/Rmifs/RemoteClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Practica3/Rmifs/StartRemoteObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RmiFSServer/Rmifs/AskRemote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RmiFSServer/Rmifs/AskRemote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RmiFSServer/Rmifs/IfaceRemoteClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RmiFSServer/Rmifs/IfaceRemoteClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RmiFSServer/Rmifs/RemoteClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RmiFSServer/Rmifs/RemoteClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RmiFSServer/Rmifs/StartRemoteObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RmiFSServer/Rmifs/StartRemoteObject.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rmifs/AskRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rmifs/AskRemote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rmifs/IfaceRemoteClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rmifs/IfaceRemoteClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rmifs/RemoteClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rmifs/RemoteClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Rmifs/StartRemoteObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Rmifs/StartRemoteObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/text(copy)" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../revisar.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../revisar.txt" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +42,7 @@
     <session id="1228280960">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.opened" value="2" />
@@ -23,8 +52,8 @@
         <counts>
           <entry key="class" value="14" />
           <entry key="java" value="36" />
-          <entry key="text" value="3" />
-          <entry key="text(copy)" value="1" />
+          <entry key="text" value="4" />
+          <entry key="text(copy)" value="2" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
@@ -32,7 +61,7 @@
         <counts>
           <entry key="CLASS" value="14" />
           <entry key="JAVA" value="36" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="PLAIN_TEXT" value="6" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
@@ -41,17 +70,18 @@
           <entry key="class" value="3" />
           <entry key="java" value="971" />
           <entry key="text" value="19" />
+          <entry key="text(copy)" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="3" />
           <entry key="JAVA" value="971" />
-          <entry key="PLAIN_TEXT" value="19" />
+          <entry key="PLAIN_TEXT" value="20" />
         </counts>
       </usages-collector>
     </session>
-    <session id="1573648518">
+    <session id="-652268956">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="1" />
@@ -61,18 +91,82 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="text" value="1" />
+          <entry key="java" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="JAVA" value="4" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-1797656417">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="java" value="12" />
+          <entry key="text" value="1" />
+          <entry key="text(copy)" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="12" />
+          <entry key="PLAIN_TEXT" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="729" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="729" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Rmifs/RemoteClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="932">
+              <caret line="65" column="83" selection-start-line="65" selection-start-column="83" selection-end-line="65" selection-end-column="83" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Rmifs/AskRemote.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="43" column="106" selection-start-line="43" selection-start-column="106" selection-end-line="43" selection-end-column="106" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Rmifs/StartRemoteObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -84,66 +178,99 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>depen</find>
+      <find>getB</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/out</dir>
     </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.idea/modules.xml" />
         <option value="$PROJECT_DIR$/src/Rmifs/FileData.java" />
-        <option value="$PROJECT_DIR$/src/Rmifs/IfaceRemoteClass.java" />
         <option value="$PROJECT_DIR$/src/AskRemote.java" />
         <option value="$PROJECT_DIR$/src/RemoteClass.java" />
         <option value="$PROJECT_DIR$/src/StartRemoteObject.java" />
         <option value="$PROJECT_DIR$/text" />
-        <option value="$PROJECT_DIR$/src/Rmifs/AskRemote.java" />
+        <option value="$PROJECT_DIR$/text(copy)" />
+        <option value="$PROJECT_DIR$/src/Rmifs/IfaceRemoteClass.java" />
+        <option value="$PROJECT_DIR$/src/Rmifs/StartRemoteObject.java" />
         <option value="$PROJECT_DIR$/src/Rmifs/RemoteClass.java" />
+        <option value="$PROJECT_DIR$/src/Rmifs/AskRemote.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="121" />
     <option name="y" value="113" />
     <option name="width" value="1146" />
     <option name="height" value="641" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Practica3 (copy)" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Practica3 (copy)" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Practica3 (copy)" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Practica3 (copy)" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Practica3 (copy)" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Practica3 (copy)" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Rmifs" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
               <item name="Practica3" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="Practica3" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="RmiFSServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RmiFSServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RmiFSServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RmiFSServer" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RmiFSServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RmiFSServer" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RmiFSServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RmiFSServer" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="RmiFSServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RmiFSServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RmiFSServer" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="RmiFSServer" type="462c0819:PsiDirectoryNode" />
+              <item name="Rmifs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RmiFSServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RmiFSServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RmiFSServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RmiFSServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Rmifs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -179,10 +306,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AskRemote">
+  <component name="RunManager" selected="Application.StartRemoteObject">
     <configuration name="AskRemote (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Rmifs.AskRemote" />
-      <module name="RmiFSClient" />
+      <module name="RmiFSServer" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Rmifs.*" />
@@ -195,7 +322,7 @@
     </configuration>
     <configuration name="AskRemote (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Rmifs.AskRemote" />
-      <module name="RmiFSClient" />
+      <module name="RmiFSServer" />
       <option name="PROGRAM_PARAMETERS" value="localhost" />
       <extension name="coverage">
         <pattern>
@@ -209,7 +336,7 @@
     </configuration>
     <configuration name="AskRemote" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Rmifs.AskRemote" />
-      <module name="RmiFSClient" />
+      <module name="RmiFSServer" />
       <option name="PROGRAM_PARAMETERS" value="localhost" />
       <extension name="coverage">
         <pattern>
@@ -223,60 +350,13 @@
     </configuration>
     <configuration name="StartRemoteObject" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Rmifs.StartRemoteObject" />
-      <module name="RmiFSClient" />
+      <module name="RmiFSServer" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Rmifs.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="RmiFSClient" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="RmiFSClient" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -289,8 +369,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AskRemote" />
         <item itemvalue="Application.StartRemoteObject" />
+        <item itemvalue="Application.AskRemote" />
         <item itemvalue="Application.AskRemote (2)" />
         <item itemvalue="Application.AskRemote (1)" />
       </list>
@@ -310,16 +390,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="121" y="113" width="1146" height="641" extended-state="0" />
+    <frame x="67" y="25" width="1293" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28727272" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2574178" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32748538" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3284553" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3284553" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32626426" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -375,13 +456,6 @@
     <entry file="file://$PROJECT_DIR$/out/production/Practica3/Rmifs/IfaceRemoteClass.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rmifs/IfaceRemoteClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IfaceRemoteClass.java" />
     <entry file="file://$PROJECT_DIR$/src/RemoteClass.java" />
     <entry file="file://$PROJECT_DIR$/src/AskRemote.java" />
@@ -394,13 +468,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rmifs/StartRemoteObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/Practica3/Rmifs/RemoteClass.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -408,27 +475,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rmifs/AskRemote.java">
+    <entry file="file://$PROJECT_DIR$/out/production/RmiFSServer/Rmifs/AskRemote.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+        <state>
+          <folding>
+            <element signature="e#0#2852#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/text(copy)">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Rmifs/RemoteClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="73" column="62" selection-start-line="73" selection-start-column="62" selection-end-line="73" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/text">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rmifs/IfaceRemoteClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rmifs/StartRemoteObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rmifs/RemoteClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="932">
+          <caret line="65" column="83" selection-start-line="65" selection-start-column="83" selection-end-line="65" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Rmifs/AskRemote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="43" column="106" selection-start-line="43" selection-start-column="106" selection-end-line="43" selection-end-column="106" />
         </state>
       </provider>
     </entry>

@@ -11,6 +11,7 @@ import java.nio.file.StandardOpenOption;
 import jade.domain.FIPAAgentManagement.DFAgentDescription;
 import jade.domain.FIPAAgentManagement.ServiceDescription;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class FSAgent extends Agent{
     
@@ -57,9 +58,10 @@ public class FSAgent extends Agent{
             MessageTemplate mt = MessageTemplate.MatchPerformative(ACLMessage.REQUEST);
             ACLMessage msg = myAgent.receive(mt);
             if (msg != null) {
-                String[] lines = msg.getContent().split("\n");
-                System.out.println(lines[0]);
-                if (lines[0].equals("read")) {
+                String type = msg.getContent().split("\n", 2)[0];
+                System.out.println(type);
+                if (type.equals("read")) {
+                    String[] lines = msg.getContent().split("\n");
                     System.out.println("Reading from " + lines[1] + " " +
                                         Integer.parseInt(lines[2]) + " bytes with " +
                                         Integer.parseInt(lines[3]) + " offset");
@@ -74,9 +76,10 @@ public class FSAgent extends Agent{
                         // Return message
                         ACLMessage reply = msg.createReply();
                         reply.setPerformative(ACLMessage.INFORM);
+                        reply.setConversationId("read");
                         reply.setContent(
                             String.valueOf(amountRead) + "\n" +
-                            new String(buffer));
+                            new String(buffer, StandardCharsets.ISO_8859_1));
                         send(reply);
                     } catch (IOException e) {
                         System.out.println(e.getMessage());
@@ -86,18 +89,16 @@ public class FSAgent extends Agent{
                         reply.setContent("0\n");
                         send(reply);
                     }       
-                }else if (lines[0].equals("write")) {
+                }else if (type.equals("write")) {
+                    String[] lines = msg.getContent().split("\n", 4);
                     try {
-                        StringBuilder builder = new StringBuilder();
-                        for (int i = 3; i < lines.length; i++) {
-                            builder.append(lines[i]);
-                        }
-                        String data = builder.toString();
+                        String data = lines[3];
                         System.out.println("Writing to " + lines[1] + " " +
                                             lines[2] + " bytes");
                         // Append to the end of the file
                         Files.write(Paths.get(lines[1]),
-                                    data.getBytes(), StandardOpenOption.CREATE,
+                                    data.getBytes(StandardCharsets.ISO_8859_1), 
+                                    StandardOpenOption.CREATE,
                                     StandardOpenOption.APPEND);
 
                         // Return message
@@ -113,7 +114,8 @@ public class FSAgent extends Agent{
                         reply.setContent("0");
                         send(reply);
                     }
-                }else if (lines[0].equals("size")){
+                }else if (type.equals("size")){
+                    String[] lines = msg.getContent().split("\n");
                     System.out.println("Size of " + lines[1]);
 
                     // Return message

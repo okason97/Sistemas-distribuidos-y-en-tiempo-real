@@ -6,21 +6,21 @@
 /* Wrapper function takes care of calling the RPC procedure */
 
 read_result server_read( CLIENT *clnt, int n_byte, int offset, char file_name[]) {
-  read_data r_data;
-  read_result *result;
+	read_data r_data;
+	read_result *result;
 
-  /* Gather everything into a single data structure to send to the server */
-  r_data.n_byte = n_byte;
-  r_data.offset = offset;
-  strcpy(r_data.file_name, file_name);
+	/* Gather everything into a single data structure to send to the server */
+	r_data.n_byte = n_byte;
+	r_data.offset = offset;
+	strcpy(r_data.file_name, file_name);
 
-  /* Call the client stub created by rpcgen */
-  result = read_1(&r_data,clnt);
-  if (result==NULL) {
-    fprintf(stderr,"Trouble calling remote procedure\n");
-    exit(0);
-  }
-  return(*result);
+	/* Call the client stub created by rpcgen */
+	result = read_1(&r_data,clnt);
+	if (result==NULL) {
+		fprintf(stderr,"Trouble calling remote procedure\n");
+		exit(0);
+	}
+	return(*result);
 }
 /* Wrapper function takes care of calling the RPC procedure */
 

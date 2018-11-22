@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -28,66 +29,48 @@ public class RemoteClass extends UnicastRemoteObject implements IfaceRemoteClass
     public String read(String data) throws RemoteException{
         ObjectMapper mapper = new ObjectMapper();
         try {
-            // Decode JSON
-            JsonNode jsonNode = mapper.readTree(data);
 
-            System.out.println("Reading from " + jsonNode.get("name").asText() + " " +
-                    jsonNode.get("length").asInt() + " bytes with " +
-                    jsonNode.get("offset").asInt() + " offset");
+            // size, offset, name
+            String[] splitData = data.split("\n", 3);
+
+            System.out.println("Reading from " + splitData[2] + " " +
+                    splitData[0] + " bytes with " +
+                    splitData[1] + " offset");
 
             // Read from file
-            RandomAccessFile fileToRead = new RandomAccessFile(new File(jsonNode.get("name").asText()), "r");
-            byte[] buffer = new byte[jsonNode.get("length").asInt()];
-            int amountRead = fileToRead.read(buffer, jsonNode.get("offset").asInt(), jsonNode.get("length").asInt());
+            RandomAccessFile fileToRead = new RandomAccessFile(new File(splitData[2]), "r");
+            byte[] buffer = new byte[Integer.valueOf(splitData[0])];
+            fileToRead.seek(Long.valueOf(splitData[1]));
+            int amountRead = fileToRead.read(buffer);
 
-            // Encode JSON
-            JsonNode result = mapper.createObjectNode();
-            ((ObjectNode) result).put("length", amountRead);
-            ((ObjectNode) result).put("data", new String(buffer));
-            return mapper.writeValueAsString(result);
+            String result = String.valueOf(amountRead) + "\n" + new String(buffer, StandardCharsets.ISO_8859_1);
+            return result;
         } catch (IOException e) {
-            // Encode JSON
-            JsonNode result = mapper.createObjectNode();
-            ((ObjectNode) result).put("length", 0);
-            ((ObjectNode) result).put("data", "");
-            try {
-                return mapper.writeValueAsString(result);
-            } catch (JsonProcessingException e1) {
-                e1.printStackTrace();
-            }
-            e.printStackTrace();
-            return  null;
+            return ("0" + "\n" + "");
         }
     }
     /* Write data from local file system (server) */
     public String write(String data) throws RemoteException{
         ObjectMapper mapper = new ObjectMapper();
         try {
-            // Decode JSON
-            JsonNode jsonNode = mapper.readTree(data);
+            // name, size, data
+            String[] splitData = data.split("\n", 3);
 
-            System.out.println("Writing to " + jsonNode.get("name").asText() + " " +
-                    jsonNode.get("data").asText().getBytes().length + " bytes");
+            System.out.println("Writing to " + splitData[0] + " " +
+                    splitData[1] + " bytes");
 
             // Append to the end of the file
-            Files.write(Paths.get(jsonNode.get("name").asText()),
-                    jsonNode.get("data").asText().getBytes(), StandardOpenOption.CREATE,  StandardOpenOption.APPEND);
+            Files.write(Paths.get(splitData[0]),
+                    splitData[2].getBytes(StandardCharsets.ISO_8859_1), StandardOpenOption.CREATE,  StandardOpenOption.APPEND);
 
-            // Encode JSON
-            JsonNode result = mapper.createObjectNode();
-            ((ObjectNode) result).put("length", jsonNode.get("data").asText().getBytes().length);
-            return mapper.writeValueAsString(result);
+            return String.valueOf(splitData[2].getBytes(StandardCharsets.ISO_8859_1).length);
         } catch (IOException e) {
-            // Encode JSON
-            JsonNode result = mapper.createObjectNode();
-            ((ObjectNode) result).put("length", 0);
-            try {
-                return mapper.writeValueAsString(result);
-            } catch (JsonProcessingException e1) {
-                e1.printStackTrace();
-            }
-            e.printStackTrace();
-            return  null;
+            return "0";
         }
+    }
+    /* Read data from local file system (server) */
+    public String sizeOf(String data) throws RemoteException{
+        System.out.println("Reading size from " + data);
+        return String.valueOf(new File(data).length());
     }
 }

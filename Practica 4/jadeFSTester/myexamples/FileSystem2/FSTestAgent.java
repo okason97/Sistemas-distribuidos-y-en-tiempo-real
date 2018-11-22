@@ -18,6 +18,8 @@ import java.nio.charset.StandardCharsets;
 public class FSTestAgent extends Agent{
     String fileName = "file";
     int ammountReceived = 0;
+    AID fsID;
+    int fileSize;
 
     // Ejecutado por unica vez en la creacion
     public void setup(){
@@ -39,24 +41,25 @@ public class FSTestAgent extends Agent{
             fe.printStackTrace();
         }
         if (result != null && result.length > 0) {
-            System.out.println("\n\nLeyendo " + fileName + ".txt");
+            System.out.println("\n\nLeyendo tamaño" + fileName + ".pdf");
             // Request file to fs agent
             ACLMessage msg = new ACLMessage(ACLMessage.REQUEST);
-            msg.addReceiver(result[0].getName());
-            msg.setContent("read\n"+ fileName + ".txt\n10\n0");
+            fsID = result[0].getName();
+            msg.addReceiver(fsID);
+            msg.setContent("size\n"+ fileName + ".pdf");
             send(msg);
-            addBehaviour(new CopycatBehaviour(this));
+            addBehaviour(new ReceiveSizeBehaviour(this));
         }else{
             System.out.println("\n\nNo se encontró agente de fs en paginas amarillas");
             doDelete();
         }
     }
 
-    public class CopycatBehaviour extends Behaviour {
-        private boolean received = false;
+    public class ReceiveSizeBehaviour extends Behaviour {
         private ACLMessage msg = null;
+        private boolean received = false;
 
-        public CopycatBehaviour(Agent a){
+        public ReceiveSizeBehaviour(Agent a){
             super(a);
         }
 
@@ -65,17 +68,48 @@ public class FSTestAgent extends Agent{
             msg = myAgent.receive(mt);
             if (msg != null) {
                 received = true;
+                fileSize = Integer.parseInt(msg.getContent());
+                System.out.println("\n\nLeyendo " + fileName + ".pdf" + " completo: " + 0);
+                ACLMessage receiveMessage = new ACLMessage(ACLMessage.REQUEST);
+                receiveMessage.addReceiver(fsID);
+                receiveMessage.setContent("read\n"+ fileName + ".pdf\n"+
+                    String.valueOf(fileSize)+"\n0");
+                send(receiveMessage);
+                myAgent.addBehaviour(new CopycatBehaviour(myAgent));
+            }else block();
+        }
+        public boolean done() {
+            return received;
+        }
+    }
+
+    public class CopycatBehaviour extends Behaviour {
+        private boolean finished = false;
+        private ACLMessage msg = null;
+
+        public CopycatBehaviour(Agent a){
+            super(a);
+        }
+
+        public void action() {
+            MessageTemplate mt = MessageTemplate.and(
+                MessageTemplate.MatchPerformative(ACLMessage.INFORM),
+                MessageTemplate.MatchConversationId("read"));
+            msg = myAgent.receive(mt);
+            if (msg != null) {
+                System.out.println("\n\nRecibida respuesta");
+                finished = true;
 
                 String[] splitData = msg.getContent().split("\n", 2);
                 int ammountRead = Integer.valueOf(splitData[0]);
                 String dataRead = splitData[1];
+                ammountReceived += ammountRead;
                 try {
-                    ammountReceived += ammountRead;
-
                     // Create local copy
-                    System.out.println("\n\nCreando copia local de " + fileName + ".txt");
-                    Files.write(Paths.get(fileName + ".txt"),
-                        dataRead.getBytes(StandardCharsets.ISO_8859_1), StandardOpenOption.APPEND,
+                    System.out.println("\n\nCreando copia local de " + fileName + ".pdf");
+                    Files.write(Paths.get(fileName + ".pdf"),
+                        dataRead.getBytes(StandardCharsets.ISO_8859_1),
+                        StandardOpenOption.APPEND,
                         StandardOpenOption.CREATE);
 
                     // Write copy in server
@@ -83,18 +117,28 @@ public class FSTestAgent extends Agent{
                     ACLMessage reply = new ACLMessage(ACLMessage.REQUEST);
                     reply.addReceiver(msg.getSender());
                     reply.setContent("write\n"+ 
-                        fileName + "(copy).txt\n" + 
+                        fileName + "(copy).pdf\n" + 
                         dataRead.length() + "\n" +
                         dataRead);
-                    send(reply);
+                    send(reply);                                            
                 } catch (IOException e) {
                     System.out.println("\n\nNo se pudo crear una copia");
                     myAgent.doDelete();
                 }
+                if(ammountReceived < fileSize){
+                    System.out.println("\n\nLeyendo " + fileName + ".pdf" + " completo: " + ammountReceived);
+                    ACLMessage receiveMessage = new ACLMessage(ACLMessage.REQUEST);
+                    receiveMessage.addReceiver(fsID);
+                    receiveMessage.setContent("read\n"+ fileName + ".pdf\n"+
+                        String.valueOf(fileSize-ammountReceived)+"\n"+
+                        String.valueOf(ammountReceived));
+                    send(receiveMessage);
+                    myAgent.addBehaviour(new CopycatBehaviour(myAgent));    
+                }
             }else block();
         }
         public boolean done() {
-            return received;
+            return finished;
         }
     }
 }

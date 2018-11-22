@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -23,34 +24,53 @@ public class AskRemote{
             String rname = "//" + "localhost" + ":" + Registry.REGISTRY_PORT + "/remote";
             IfaceRemoteClass remote = (IfaceRemoteClass) Naming.lookup(rname);
 
-            String fileName = "text";
-            int fileSize = 10;
+            String fileName = "file.pdf";
+            String copyName = "file2.pdf";
 
-            // Encode JSON
-            ObjectMapper mapper = new ObjectMapper();
-            JsonNode readJson = mapper.createObjectNode();
-            ((ObjectNode) readJson).put("length", fileSize);
-            ((ObjectNode) readJson).put("offset", 0);
-            ((ObjectNode) readJson).put("name", fileName);
+            int fileSize = Integer.valueOf(remote.sizeOf(fileName));
+
+            int received = 0;
+
+            String data = String.valueOf(fileSize) + "\n" +
+                    "0" + "\n" + fileName;
 
             // Read from server
-            String readResult = remote.read(mapper.writeValueAsString(readJson));
+            String readResult = remote.read(data);
 
-            // Decode JSON
-            JsonNode readResultJson = mapper.readTree(readResult);
+            String[] splitReadResult = readResult.split("\n", 2);
+
+            received += Integer.valueOf(splitReadResult[0]);
+            System.out.println("received: " + Integer.valueOf(splitReadResult[0]));
+            System.out.println("real received: " + splitReadResult[1].getBytes(StandardCharsets.ISO_8859_1).length);
 
             // Create local copy
             Files.write(Paths.get(fileName),
-                    readResultJson.get("data").asText().getBytes(), StandardOpenOption.CREATE);
+                    splitReadResult[1].getBytes(StandardCharsets.ISO_8859_1), StandardOpenOption.CREATE);
 
-            // Encode JSON
-            JsonNode writeCopyJson = mapper.createObjectNode();
-            ((ObjectNode) writeCopyJson).put("name", fileName + "(copy)");
-            ((ObjectNode) writeCopyJson).put("data", readResultJson.get("data").asText());
-            ((ObjectNode) writeCopyJson).put("length", readResultJson.get("length").asInt());
+            data = copyName + "\n" + splitReadResult[0] + "\n" + splitReadResult[1];
 
             // Write copy in server
-            remote.write(mapper.writeValueAsString(writeCopyJson));
+            remote.write(data);
+            while (received < fileSize){
+                data = String.valueOf(fileSize-received) + "\n" +
+                        String.valueOf(received) + "\n" + fileName;
+
+                // Read from server
+                readResult = remote.read(data);
+
+                splitReadResult = readResult.split("\n", 2);
+
+                received += Integer.valueOf(splitReadResult[0]);
+
+                // Create local copy
+                Files.write(Paths.get(fileName),
+                        splitReadResult[1].getBytes(StandardCharsets.ISO_8859_1), StandardOpenOption.APPEND);
+
+                data = copyName + "\n" + splitReadResult[0] + "\n" + splitReadResult[1];
+
+                // Write copy in server
+                remote.write(data);
+            }
 
             System.out.println("Done");
         } catch (Exception e) {

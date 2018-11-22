@@ -1,4 +1,5 @@
-package Rmifs;/*
+package Rmifs;
+/*
 * StartRemoteObject.java
 * Starts the remote object. More specifically:
 * 1) Creates the object which has the remote methods to be invoked
