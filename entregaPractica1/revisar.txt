@@ -1,0 +1,2 @@
+chequear contenido
+tiempo ida y vuelta /2

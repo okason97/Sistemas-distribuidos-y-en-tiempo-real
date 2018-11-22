@@ -13,6 +13,7 @@ public class Client
 {
   public static void main(String[] args) throws IOException
   {
+    long startTime;
     /* Check the number of command line parameters */
     if ((args.length != 2) || (Integer.valueOf(args[1]) <= 0) )
     {
@@ -44,24 +45,16 @@ public class Client
     /* Buffer to use with communications (and its length) */
     byte[] buffer;
     
-    /* Get some input from user */
-    Console console  = System.console();
-    String inputline = console.readLine("Please enter the message: ");
+    String inputline = "hola";
 
     /* Get the bytes... */
     buffer = inputline.getBytes();
 
     /* Send read data to server */
+    startTime = System.nanoTime();
     toserver.write(buffer, 0, buffer.length);
-    
-    /* Recv data back from server (get space) */
-    buffer = new byte[256];
-    fromserver.read(buffer);
-
-    /* Show data received from server */
-    String resp = new String(buffer);
-    System.out.println(resp);
-    
+    System.out.println("time,"+((System.nanoTime()-startTime)/2));
+        
     fromserver.close();
     toserver.close();
     socketwithserver.close();

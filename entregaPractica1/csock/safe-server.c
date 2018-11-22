@@ -62,11 +62,11 @@ int main(int argc, char *argv[])
 
 	// read the size of the data to receive
 	longBuffer = 0;
-    timetick = dwalltime(); //Empieza a controlar el tiempo
+//    timetick = dwalltime(); //Empieza a controlar el tiempo
 	n = read(newsockfd, &longBuffer, sizeof(longBuffer));
 	if (n < 0) 
 	     error("ERROR reading from socket");
-    printf("read, %f\n", dwalltime()-timetick);
+//    printf("read, %f\n", dwalltime()-timetick);
 	stringSize = ntohl(longBuffer);
 
 	char buffer[stringSize];
@@ -75,11 +75,11 @@ int main(int argc, char *argv[])
     int received = 0;
     while (received<stringSize){
 		bzero(newBuffer,stringSize);
-	    timetick = dwalltime(); //Empieza a controlar el tiempo
+//	    timetick = dwalltime(); //Empieza a controlar el tiempo
 		n = read(newsockfd,newBuffer,stringSize-received);
 		if (n < 0) 
 		     error("ERROR writing to socket");
-	    printf("read, %f\n", dwalltime()-timetick);
+//	    printf("read, %f\n", dwalltime()-timetick);
 		// append the new data to the buffer
 		strcat( buffer, newBuffer );
 		received += n;

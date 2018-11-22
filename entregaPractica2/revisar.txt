@@ -1,0 +1,2 @@
+arreglar cantidad a recibir correcta
+recibir todo

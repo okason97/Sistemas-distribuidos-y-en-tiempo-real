@@ -7,6 +7,17 @@
 #include <unistd.h>
 #include <strings.h>
 #include <string.h>
+#include <sys/time.h>
+
+//Para calcular tiempo
+double dwalltime(){
+  double sec;
+  struct timeval tv;
+
+  gettimeofday(&tv,NULL);
+  sec = tv.tv_sec + tv.tv_usec/1000000.0;
+  return sec;
+}
 
 void error(char *msg)
 {
@@ -19,6 +30,7 @@ int main(int argc, char *argv[])
     int sockfd, portno, n;
     struct sockaddr_in serv_addr;
     struct hostent *server;
+    double timetick;
 
     char buffer[256];
     if (argc < 3) {
@@ -42,16 +54,11 @@ int main(int argc, char *argv[])
     serv_addr.sin_port = htons(portno);
     if (connect(sockfd,(struct sockaddr *)&serv_addr,sizeof(serv_addr)) < 0) 
         error("ERROR connecting");
-    printf("Please enter the message: ");
     bzero(buffer,256);
-    fgets(buffer,255,stdin);
+    timetick = dwalltime(); //Empieza a controlar el tiempo
     n = write(sockfd,buffer,strlen(buffer));
     if (n < 0) 
          error("ERROR writing to socket");
-    bzero(buffer,256);
-    n = read(sockfd,buffer,255);
-    if (n < 0) 
-         error("ERROR reading from socket");
-    printf("%s\n",buffer);
+    printf("write, %f\n", (dwalltime()-timetick)/2);
     return 0;
 }

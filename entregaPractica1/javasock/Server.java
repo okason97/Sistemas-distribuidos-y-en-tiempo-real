@@ -70,11 +70,6 @@ public class Server
 
     System.out.println("strrsp " + strresp);
 
-    buffer = strresp.getBytes();
-
-    /* Send the bytes back */
-    toclient.write(buffer, 0, buffer.length);
-
     /* Close everything related to the client connection */
     fromclient.close();
     toclient.close();
