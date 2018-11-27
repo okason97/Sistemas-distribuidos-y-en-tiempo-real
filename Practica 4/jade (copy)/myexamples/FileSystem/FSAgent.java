@@ -113,14 +113,6 @@ public class FSAgent extends Agent{
                         reply.setContent("0");
                         send(reply);
                     }
-                }else if (lines[0].equals("size")){
-                    System.out.println("Size of " + lines[1]);
-
-                    // Return message
-                    ACLMessage reply = msg.createReply();
-                    reply.setPerformative(ACLMessage.INFORM);
-                    reply.setContent(String.valueOf(new File(lines[1]).length()));
-                    send(reply);
                 }
             }else block();
         }
