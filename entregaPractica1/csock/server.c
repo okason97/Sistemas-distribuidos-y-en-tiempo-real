@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <strings.h>
 #include <unistd.h>
+#include <string.h>
 
 void error(char *msg)
 {
@@ -43,8 +44,13 @@ int main(int argc, char *argv[])
      if (newsockfd < 0) 
           error("ERROR on accept");
      bzero(buffer,256);
-     n = read(newsockfd,buffer,255);
+     n = read(newsockfd,buffer,strlen(buffer));
      if (n < 0) error("ERROR reading from socket");
+
      printf("Here is the message: %s\n",buffer);
+
+     n = write(newsockfd,buffer,strlen(buffer));
+     if (n < 0) error("ERROR writing to socket");
+
      return 0; 
 }

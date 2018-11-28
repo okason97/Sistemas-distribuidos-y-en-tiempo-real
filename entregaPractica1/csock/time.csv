@@ -1,20 +1,12 @@
-operation,time
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000004
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000003
-write, 0.000003
+type,time
+write, 0.000257
+write, 0.000256
+write, 0.000244
+write, 0.000286
+write, 0.000107
+write, 0.000248
+write, 0.000274
+write, 0.000258
+write, 0.000247
+write, 0.000242
+write, 0.000242

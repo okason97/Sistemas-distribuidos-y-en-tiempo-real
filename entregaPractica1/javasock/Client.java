@@ -53,6 +53,7 @@ public class Client
     /* Send read data to server */
     startTime = System.nanoTime();
     toserver.write(buffer, 0, buffer.length);
+    fromserver.read(buffer);
     System.out.println("time,"+((System.nanoTime()-startTime)/2));
         
     fromserver.close();

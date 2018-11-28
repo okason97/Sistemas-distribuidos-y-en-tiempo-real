@@ -59,6 +59,7 @@ public class Server
     
     /* Recv data from client */
     fromclient.read(buffer);
+    toclient.write(buffer, 0, buffer.length);
 
     /* Convert to string */
     String str = new String(buffer);

@@ -57,8 +57,11 @@ int main(int argc, char *argv[])
     bzero(buffer,256);
     timetick = dwalltime(); //Empieza a controlar el tiempo
     n = write(sockfd,buffer,strlen(buffer));
-    if (n < 0) 
-         error("ERROR writing to socket");
+    if (n < 0) error("ERROR writing to socket");
+
+    n = read(sockfd,buffer,255);
+    if (n < 0) error("ERROR reading from socket");
+
     printf("write, %f\n", (dwalltime()-timetick)/2);
     return 0;
 }
